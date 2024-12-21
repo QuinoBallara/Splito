@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import axios from 'axios'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    axios.get('http://localhost:5000')
+      .then(response => {
+        console.log('Server is up and running:', response.status);
+      })
+      .catch(error => {
+        console.error('Error connecting to the server:', error.message);
+      });
+  }, []);
+
 
   return (
     <>
