@@ -13,4 +13,4 @@ COPY . .
 
 # Expose port and start server
 EXPOSE 5000
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
