@@ -17,12 +17,13 @@
 
 ## Instructions for devs
 
-1. Open a terminal in the project root folder
-2. Move to the backend folder: `cd backend`
-3. Install npm modules: `npm install`
-4. Go back to the project root and move to the frontend folder: `cd ../frontend`
-5. Install npm modules: `npm install`
-6. Go back to the project root folder: `cd ..`
-7. Run `docker-compose up --build`
-8. That's it! The project is running on http://localhost:3000
+1. Follow the instructions above
+2. Open a terminal in the project root folder
+3. Move to the backend folder: `cd backend`
+4. Install npm modules: `npm install`
+5. Run the backend: `npm run dev`
+6. Go back to the project root and move to the frontend folder: `cd ../frontend`
+7. Install npm modules: `npm install`
+8. Run the frontend: `npm run dev`
+9. That's it! The project is running on http://localhost:3000
 

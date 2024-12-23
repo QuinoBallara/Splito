@@ -55,8 +55,8 @@ router.post('/register', registerUser);
  *         description: Login successful
  *       401:
  *         description: Incorrect credentials
- *      400:
- *        description: Bad request
+ *       400:
+ *         description: Bad request
  */
 router.post('/login', loginUser);
 
