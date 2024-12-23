@@ -8,6 +8,7 @@ const SplitSchema = new Schema({
 });
 
 const ExpenseSchema = new Schema({
+    _id: { type: String },
     description: { type: String, required: true },
     amount: { type: Number, required: true },
     paidBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
