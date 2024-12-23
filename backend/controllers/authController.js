@@ -14,7 +14,9 @@ const registerUser = async (req, res) => {
             return res.status(400).json({ message: 'User already exists' });
         }
         const user = await User.create(req.body);
+        console.log(user);
         const token = generateToken(user._id);
+        console.log(token);
         res.status(201).json({ user, token });
     } catch (error) {
         res.status(400).json({ message: error.message });
@@ -24,7 +26,7 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const emailUser = email.tolowerCase();
+        const emailUser = email.toLowerCase();
         const user = await User.findOne({ email: emailUser });
         if (user && (await user.matchPassword(password))) {
             const token = generateToken(user._id);

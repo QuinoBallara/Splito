@@ -17,11 +17,13 @@ const { registerUser, loginUser } = require('../controllers/authController');
  *           schema:
  *             type: object
  *             properties:
- *               username:
+ *               name:
  *                 type: string
  *               email:
  *                 type: string
  *               password:
+ *                 type: string
+ *               currency:
  *                 type: string
  *     responses:
  *       201:
