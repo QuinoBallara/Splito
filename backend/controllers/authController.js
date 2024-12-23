@@ -26,8 +26,16 @@ const loginUser = async (req, res) => {
         const { email, password } = req.body;
         const emailUser = email.tolowerCase();
         const user = await User.findOne({ email: emailUser });
-        if (!user) {
-            return res.status(400).json({ message: 'User does not exist' });
+        if (user && (await user.matchPassword(password))) {
+            const token = generateToken(user._id);
+            res.status(200).json({ user, token });
+        } else {
+            res.status(401).json({ message: 'Invalid email or password' });
         }
     }
+    catch (error) {
+        res.status(400).json({ message: error.message });
+    }
 }
+
+module.exports = { registerUser, loginUser };
