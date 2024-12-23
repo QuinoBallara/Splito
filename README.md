@@ -1,7 +1,7 @@
 ﻿# Splito
 
-Backend: http://localhost:5000
-Frontend: http://localhost:3000
+- Backend: http://localhost:5000
+- Frontend: http://localhost:3000
 
 ## Requirements
 
@@ -22,6 +22,7 @@ Frontend: http://localhost:3000
 3. Install npm modules: `npm install`
 4. Go back to the project root and move to the frontend folder: `cd ../frontend`
 5. Install npm modules: `npm install`
-6. Run `docker-compose up --build`
-7. That's it! The project is running on http://localhost:3000
+6. Go back to the project root folder: `cd ..`
+7. Run `docker-compose up --build`
+8. That's it! The project is running on http://localhost:3000
 
