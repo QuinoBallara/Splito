@@ -1,0 +1,33 @@
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: '30d'
+    });
+};
+
+const registerUser = async (req, res) => {
+    try {
+        const userExists = await User.findOne({ email: req.body.email });
+        if (userExists) {
+            return res.status(400).json({ message: 'User already exists' });
+        }
+        const user = await User.create(req.body);
+        const token = generateToken(user._id);
+        res.status(201).json({ user, token });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+}
+
+const loginUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const emailUser = email.tolowerCase();
+        const user = await User.findOne({ email: emailUser });
+        if (!user) {
+            return res.status(400).json({ message: 'User does not exist' });
+        }
+    }
+}
