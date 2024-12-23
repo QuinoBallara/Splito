@@ -59,3 +59,5 @@ router.post('/register', registerUser);
  *        description: Bad request
  */
 router.post('/login', loginUser);
+
+module.exports = router;

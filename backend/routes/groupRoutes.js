@@ -351,3 +351,5 @@ router.delete('/:id/:userId', protect, removeMember);
  */
 router.patch('/:id/:userId', protect, updateMember);
 
+module.exports = router;
+
