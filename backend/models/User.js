@@ -43,6 +43,10 @@ const userSchema = new Schema({
     }]
 });
 
+userSchema.methods.matchPassword = async function (enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.password);
+};
+
 // Encrypt password before saving the user
 userSchema.pre('save', async function (next) {
     if (this.isModified('password') || this.isNew) {
