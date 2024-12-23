@@ -8,7 +8,6 @@ const SplitSchema = new Schema({
 });
 
 const ExpenseSchema = new Schema({
-    _id: { type: String },
     description: { type: String, required: true },
     amount: { type: Number, required: true },
     paidBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
@@ -22,7 +21,6 @@ const MemberSchema = new Schema({
 });
 
 const GroupSchema = new Schema({
-    _id: { type: String, required: true },
     name: { type: String, required: true },
     createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     createdAt: { type: Date, default: Date.now },

@@ -5,6 +5,9 @@ const cors = require("cors");
 const authRoutes = require('./routes/authRoutes')
 const groupRoutes = require('./routes/groupRoutes')
 const swaggerDocs = require("./config/swagger");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
